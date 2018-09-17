@@ -1,7 +1,6 @@
 ---
 layout: post
-title:  "Misleading documentation - Exchange meeting requests"
-date:   2016-10-02 23:30:00 +0200
+title:  "Pierwszy post"
 categories: 
 ---
 
