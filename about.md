@@ -1,10 +1,17 @@
 ---
 layout: page
-title: About
+title: About Me 
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hello,
+Blog is written by Marcin Krawczyk.
+This blog is about Microsoft Azure.
+I'll write articles about my experience, suggestions or problems wich I had with Azure in my work.
+
+Have a nice read.
+
+Marcin
 
 You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
