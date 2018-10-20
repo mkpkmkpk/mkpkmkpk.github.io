@@ -4,7 +4,7 @@ title:  "Azure Policy"
 categories: Azure Policy Resource Security
 ---
 
-<font size=+3><b>Azure Policy</b></font>
+<h3><b>Azure Policy</b></h3>
 
 <font size=+2>sadasd</font>
 
