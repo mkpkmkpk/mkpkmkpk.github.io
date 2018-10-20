@@ -1,16 +1,14 @@
 ---
 layout: page
-title: About Me 
+title: About Marcin Krawczyk 
 permalink: /about/
 ---
 
-Hello,
+Hello,<br>
 
 Blog is written by Marcin Krawczyk.
 
-This blog is about Microsoft Azure.
-
-I'll write articles about my experience, suggestions or problems wich I had with Azure in my work.
+This blog is about my experience with Microsoft Azure as a Azure Architect.
 
 Have a nice read.
 
