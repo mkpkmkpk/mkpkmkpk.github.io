@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Pierwszy post"
-categories: 
+title:  "Azure Policy"
+categories: Azure Policy Resource Security
 ---
 
-## To jest nowy blog Marcina!!!
+<b>Azure Policy</b>
 
-To jest mój pierwszy post
+<font size=+1>sadasd</font>
+
+asdasd
