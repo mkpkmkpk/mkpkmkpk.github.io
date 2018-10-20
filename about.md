@@ -4,7 +4,7 @@ title: About Marcin Krawczyk
 permalink: /about/
 ---
 
-Hello,<br>
+Hello,
 
 Blog is written by Marcin Krawczyk.
 
