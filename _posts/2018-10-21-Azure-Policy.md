@@ -93,107 +93,61 @@ There is a difference between them. When you are using Azure Portal, then you do
 {% highlight json %}
 
 {
-
     "properties": {
-
         "mode": "All",
-
         "parameters": {},
-
         "displayName": "Ensure https traffic only for storage account",
-
         "description": "Ensure https traffic only for storage account",
-
         "policyRule": {
-
             "if": {
-
                 "allOf": [
-
                     {
-
                         "field": "type",
-
-                        "equals": "Microsoft.Storage/storageAccounts"
-
-                    },
-
+                        "equals": "Microsoft.Storage/storageAccounts"                    },
                     {
-
                         "not": {
-
                             "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
-
                             "equals": "true"
-
                         }
-
                     }
-
                 ]
-
             },
-
             "then": {
-
                 "effect": "deny"
-
             }
-
         }
-
     }
-
 }
 
 {% endhighlight %}
 
 The same script for Azure Portal deployment will look like this:
 
+{% highlight json %}
+
 {
-
   "mode": "All",
-
   "policyRule": {
-
     "if": {
-
       "allOf": [
-
         {
-
           "field": "type",
-
           "equals": "Microsoft.Storage/storageAccounts"
-
         },
-
         {
-
           "not": {
-
             "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
-
             "equals": "True"
-
           }
-
         }
-
       ]
-
     },
-
     "then": {
-
       "effect": "deny"
-
     }
-
   }
-
 }
-
+{% endhighlight %}
 
 For the purpose of this article I’ll use Azure Portal method of creation.
 
@@ -247,26 +201,20 @@ You can use Parameters when you would like to choose a value from Azure. For ins
 </ul>
 Below you can find an example for Parameters:
 
+{% highlight json %}
+
 "parameters": {
-
     "allowedLocations": {
-
         "type": "array",
-
         "metadata": {
-
             "description": "The list of allowed locations for resources.",
-
             "displayName": "Allowed locations",
-
             "strongType": "location"
-
         }
-
     }
-
 }
 
+{% endhighlight %}
 
 ## Display Name
 Used only when you create Azure Policy in Powershell or Azure CLI. It’s a name of policy.
@@ -277,22 +225,16 @@ Used only when you create Azure Policy in Powershell or Azure CLI. It’s a desc
 ## Policy rule
 Policy rule is consists If and Then section. Policy rule look like that:
 
-
+{% highlight json %}
 {
     "if": {
-
         <condition> | <logical operator>
-
     },
-
     "then": {
-
         "effect": "deny | audit | append | auditIfNotExists | deployIfNotExists"
-
     }
-
 }
-
+{% endhighlight %}
 
 You may use couple of logical operators like:
 <ul>
@@ -357,31 +299,23 @@ Fields represents properties for resource you choose. Those fields value are sup
 
 This is Azure Policy example for Action, when I would like to block creation of VM Extension:
 
+{% highlight json %}
+
 {
-
   "mode": "all",
-
   "policyRule": {
-
     "if": {
-
       "source": "action",
-
       "equals": "Microsoft.Compute/virtualMachines/extensions/write"
-
     },
-
     "then": {
-
       "effect": "deny"
-
     }
-
   },
-
   "parameters": {}
-
 }
+
+{% endhighlight %}
 
 <b>Aliases</b> – The value for specific service properties. At time I write this article there is 696 aliases created. You can list them by running this script:
 
