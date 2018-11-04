@@ -209,9 +209,13 @@ There are two possibly value for Mode field:
 </ul>
 
 I strongly recommended to set mode to All in most case. There is only one situation, when you create a policy for tags and location, when you would like to use indexed mode.  Be careful when you copy Azure Policy from Internet. There are quite a lots of situation when Mode is set to indexed!!! This may also happened when you use default definition in Azure Portal (see Mode value below)!!!! So please DON’T USE built-in policy with Mode Indexed. Duplicate and create your own!!!
+
+
 !({{ site.baseurl }}/images/Azure-Policy/AzurePolicy03.png "")
 !({{ site.baseurl }}/images/Azure-Policy/AzurePolicy04.png "")
+
 <b>IMPORTANT:
+
 When you not specify mode parameter manually, then this value would be directly assign by Azure. Automatically assign value is different when you are using Powershell and CLI. Below you can find default value for them:
 <ul>
 <li>Powershell – By default Mode is set to ALL</li>
@@ -289,40 +293,42 @@ You may use couple of logical operators like:
 
 A Conditions are used for field criteria. Supported conditions are:
 <ul>
-<li>contains
-<li>containsKeys
-<li>equals
-<li>exists
-<li>in
-<li>like
-<li>match
-<li>notContains
-<li>notContainsKeys
-<li>notEquals
-<li>notIn
-<li>notLike
-<li>notMatch
+<li>contains</li>
+<li>containsKeys</li>
+<li>equals</li>
+<li>exists</li>
+<li>in</li>
+<li>like</li>
+<li>match</li>
+<li>notContains</li>
+<li>notContainsKeys</li>
+<li>notEquals</li>
+<li>notIn</li>
+<li>notLike</li>
+<li>notMatch</li>
 </ul>
+
 When you are using Like and notLike, you can use * in the value. There may be ONLY one wildcard * in criteria.
-When you are using march and notMatch, you can use
+
+When you are using march and notMatch, you can use:
 <ul>
-<li># - represent a digit
-<li>? – represent a letter
-<li>. – match all characters
+<li># - represent a digit</li>
+<li>? – represent a letter</li>
+<li>. – match all characters</li>
 </ul>
 
 ## Fields
 
 Fields represents properties for resource you choose. Those fields value are supported:
 <ul>
-<li>aliases
-<li>name
-<li>fullName
-<li>kind
-<li>type
-<li>location
-<li>tags
-<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations
+<li>aliases</li>
+<li>name</li>
+<li>fullName</li>
+<li>kind</li>
+<li>type</li>
+<li>location</li>
+<li>tags</li>
+<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations</li>
 </ul>
 <b>name</b> – The name of resource which you use when created policy
 
@@ -456,9 +462,9 @@ $aliases.count
 Ok, I have 696 possible value, but how can I know which fields values are possible. The best approach is the set properly all those value for such resource and then:
 
 <ul>
-<li>We can open Resource Explorer - https://resources.azure.com and get value for resource
-<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph
-<li>We can use Resource Explorer in Azure Portal – All services -> Resource Explorer
+<li>We can open Resource Explorer - https://resources.azure.com and get value for resource</li>
+<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph</li>
+<li>We can use Resource Explorer in Azure Portal – All services -> Resource Explorer</li>
 </ul>
 
 At the end of this article I’ll put the whole list of Aliases which you can use. You can always ask for specific aliases if you can’t find something very useful for you. If so, please go to such URL:
@@ -468,11 +474,11 @@ https://github.com/Azure/azure-policy/blob/master/1-contribution-guide/request-a
 ## Effect
 Azure Policy supports the following effect:
 <ul>
-<li>Deny – Unable to create resource when policy is enable. If you create policy and you had some resources already created, then they will be on non-compliant list.
-<li>Audit – Inform you about non-compliant resources
-<li>Append – adds extra fields 
-<li>AuditIfNotExists – Inform you about something is not exist
-<li>DeployIfNotExists – deploy something if it is not exist. For example VM extension when it doesn’t exist
+<li>Deny – Unable to create resource when policy is enable. If you create policy and you had some resources already created, then they will be on non-compliant list.</li>
+<li>Audit – Inform you about non-compliant resources</li>
+<li>Append – adds extra fields </li>
+<li>AuditIfNotExists – Inform you about something is not exist</li>
+<li>DeployIfNotExists – deploy something if it is not exist. For example VM extension when it doesn’t exist</li>
 </ul>
 <b>PLEASE DON’T USE DENY POLICY WHEN YOU ARE CREATING FIRST POLICY. USE AUDIT!!!</b>
 
