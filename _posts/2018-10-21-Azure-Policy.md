@@ -90,7 +90,7 @@ When you create a custom policy you have to decide how you implemented them. You
 
 There is a difference between them. When you are using Azure Portal, then you don’t need to add couple policy properties like displayName, description and so on. Below you can find sample policy which ensure that only https traffic is enable for storage account. This policy is created for PowerShell and CLI:
 
-{% highlight json %}
+```
 
 {
     "properties": {
@@ -119,11 +119,11 @@ There is a difference between them. When you are using Azure Portal, then you do
     }
 }
 
-{% endhighlight %}
+```
 
 The same script for Azure Portal deployment will look like this:
 
-{% highlight json %}
+```
 
 {
   "mode": "All",
@@ -147,7 +147,7 @@ The same script for Azure Portal deployment will look like this:
     }
   }
 }
-{% endhighlight %}
+```
 
 For the purpose of this article I’ll use Azure Portal method of creation.
 
@@ -201,7 +201,7 @@ You can use Parameters when you would like to choose a value from Azure. For ins
 </ul>
 Below you can find an example for Parameters:
 
-{% highlight json %}
+```
 
 "parameters": {
     "allowedLocations": {
@@ -214,7 +214,7 @@ Below you can find an example for Parameters:
     }
 }
 
-{% endhighlight %}
+```
 
 ## Display Name
 Used only when you create Azure Policy in Powershell or Azure CLI. It’s a name of policy.
@@ -225,7 +225,7 @@ Used only when you create Azure Policy in Powershell or Azure CLI. It’s a desc
 ## Policy rule
 Policy rule is consists If and Then section. Policy rule look like that:
 
-{% highlight json %}
+```
 {
     "if": {
         <condition> | <logical operator>
@@ -234,7 +234,7 @@ Policy rule is consists If and Then section. Policy rule look like that:
         "effect": "deny | audit | append | auditIfNotExists | deployIfNotExists"
     }
 }
-{% endhighlight %}
+```
 
 You may use couple of logical operators like:
 <ul>
@@ -299,7 +299,7 @@ Fields represents properties for resource you choose. Those fields value are sup
 
 This is Azure Policy example for Action, when I would like to block creation of VM Extension:
 
-{% highlight json %}
+```
 
 {
   "mode": "all",
@@ -315,11 +315,11 @@ This is Azure Policy example for Action, when I would like to block creation of 
   "parameters": {}
 }
 
-{% endhighlight %}
+```
 
 <b>Aliases</b> – The value for specific service properties. At time I write this article there is 696 aliases created. You can list them by running this script:
 
-{% highlight json %}
+```
 
 #Login first with Connect-AzureRmAccount if not using Cloud Shell
 
@@ -402,12 +402,12 @@ $aliases | Sort-Object -Property Namespace, resourceType, alias
 
 $aliases.count 
 
-{% endhighlight %}
+```
 
 Ok, I have 696 possible value, but how can I know which fields values are possible. The best approach is the set properly all those value for such resource and then:
 
 <ul>
-<li>We can open Resource Explorer - [https://resources.azure.com] and get value for resource</li>
+<li>We can open Resource Explorer - (https://resources.azure.com) and get value for resource</li>
 <li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph</li>
 <li>We can use Resource Explorer in Azure Portal – All services -> Resource Explorer</li>
 </ul>
@@ -432,7 +432,7 @@ Azure Policy supports the following effect:
 ## WHEN DENY IS NOT DENYING ☹
 There is a situation when Deny policy doesn’t work properly. Let me show you that on example. I would like to prevent creating of Storage Account without network ACLS (Firewall) enabled. I create such policy:
 
-{% highlight json %}
+```
 
 {
   "mode": "all",
@@ -456,7 +456,7 @@ There is a situation when Deny policy doesn’t work properly. Let me show you t
   "parameters": {}
 }
 
-{% endhighlight %}
+```
 
 As you can see, there is deny effect enabled. So we can assume that we can’t create Storage Account without Network ACLS. What will really happened we assign this policy??? We will create it and after that it’ll be NON-Compliant resource. WHY THIS HAPPENED???? Because when you are creating such resource there is no information about networkAcls.defaultAction is template!!!  
 
@@ -466,7 +466,7 @@ So, we would like to write a custom script for Deny create a Storage Account whe
 
 So it’s very easy for me to write policy based on aliases which I know.
 
-{% highlight json %}
+```
 
 {
   "mode": "All",
@@ -493,7 +493,7 @@ So it’s very easy for me to write policy based on aliases which I know.
   }
 }
 
-{% endhighlight %}
+```
 
 
 ## Services Aliases:
