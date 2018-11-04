@@ -188,7 +188,7 @@ When you not specify mode parameter manually, then this value would be directly 
 <li>Created By Microsoft Built-in – A lots of MODE is set to INDEXED!!!!!!</b></li>
 </ul>
 
-## Parameters
+### Parameters
 You can use Parameters when you would like to choose a value from Azure. For instant you would like to choose Allowed location or Allowed Region in Azure, then you create Parameters, where after assigned to policy you choose exact value from Azure. There are ONLY some types of Parameters which you can use:
 <ul>
 <li>"location"</li>
@@ -216,13 +216,13 @@ Below you can find an example for Parameters:
 
 ```
 
-## Display Name
+### Display Name
 Used only when you create Azure Policy in Powershell or Azure CLI. It’s a name of policy.
 
-## Description
+### Description
 Used only when you create Azure Policy in Powershell or Azure CLI. It’s a description of policy.
 
-## Policy rule
+### Policy rule
 Policy rule is consists If and Then section. Policy rule look like that:
 
 ```
@@ -269,7 +269,7 @@ When you are using march and notMatch, you can use:
 <li>. – match all characters</li>
 </ul>
 
-## Fields
+### Fields
 
 Fields represents properties for resource you choose. Those fields value are supported:
 <ul>
@@ -322,84 +322,45 @@ This is Azure Policy example for Action, when I would like to block creation of 
 ```
 
 #Login first with Connect-AzureRmAccount if not using Cloud Shell
-
 $azContext = Get-AzureRmContext
-
 $azProfile = [Microsoft.Azure.Commands.Common.Authentication.Abstractions.AzureRmProfileProvider]::Instance.Profile
-
 $profileClient = New-Object -TypeName Microsoft.Azure.Commands.ResourceManager.Common.RMProfileClient -ArgumentList ($azProfile)
-
 $token = $profileClient.AcquireAccessToken($azContext.Subscription.TenantId)
-
 $authHeader = @{
-
   'Authorization'='Bearer ' + $token.AccessToken
-
 }
-
 
 #Create a splatting variable for Invoke-RestMethod
-
 $invokeRest = @{
-
   Uri = 'https://management.azure.com/providers/?api-version=2018-05-01&$expand=resourceTypes/aliases'
-
   Method = 'Get'
-
   ContentType = 'application/json'
-
   Headers = $authHeader
-
 }
-
 #Invoke the REST API
-
 $response = Invoke-RestMethod @invokeRest
-
 #Create an List to hold discovered aliases
-
 $aliases = [System.Collections.Generic.List[pscustomobject]]::new()
-
 foreach ($ns in $response.value)
-
 {
-
     foreach ($rT in $ns.resourceTypes)
-
     {
-
         if ($rT.aliases)
-
         {
-
             foreach ($obj in $rT.aliases)
-
             {
-
                 $alias = [PSCustomObject]@{
-
                     Namespace    = $ns.namespace
-
                     resourceType = $rT.resourceType
-
                     alias        = $obj.name
-
                 }
-
                 $aliases.Add($alias)
-
             }
-
         }
-
     }
-
 }
-
 #Output the list and sort it by Namespace, resourceType and alias. You can customize with Where-Object to limit as desired.
-
 $aliases | Sort-Object -Property Namespace, resourceType, alias
-
 $aliases.count 
 
 ```
@@ -416,7 +377,7 @@ At the end of this article I’ll put the whole list of Aliases which you can us
 
 [https://github.com/Azure/azure-policy/blob/master/1-contribution-guide/request-alias.md](https://github.com/Azure/azure-policy/blob/master/1-contribution-guide/request-alias.md)
 
-## Effect
+### Effect
 Azure Policy supports the following effect:
 <ul>
 <li>Deny – Unable to create resource when policy is enable. If you create policy and you had some resources already created, then they will be on non-compliant list.</li>
@@ -429,7 +390,7 @@ Azure Policy supports the following effect:
 
 
 
-## WHEN DENY IS NOT DENYING ☹
+### WHEN DENY IS NOT DENYING ☹
 There is a situation when Deny policy doesn’t work properly. Let me show you that on example. I would like to prevent creating of Storage Account without network ACLS (Firewall) enabled. I create such policy:
 
 ```
@@ -496,7 +457,7 @@ So it’s very easy for me to write policy based on aliases which I know.
 ```
 
 
-## Services Aliases:
+# Services Aliases:
 ### Analysis Services
 Microsoft.AnalysisServices/servers/asAdministrators
 Microsoft.AnalysisServices/servers/asAdministrators.members                                                             
