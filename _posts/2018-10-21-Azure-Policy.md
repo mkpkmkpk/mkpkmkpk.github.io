@@ -319,6 +319,8 @@ This is Azure Policy example for Action, when I would like to block creation of 
 
 <b>Aliases</b> – The value for specific service properties. At time I write this article there is 696 aliases created. You can list them by running this script:
 
+{% highlight json %}
+
 #Login first with Connect-AzureRmAccount if not using Cloud Shell
 
 $azContext = Get-AzureRmContext
@@ -350,16 +352,13 @@ $invokeRest = @{
 
 }
 
-
 #Invoke the REST API
 
 $response = Invoke-RestMethod @invokeRest
 
-
 #Create an List to hold discovered aliases
 
 $aliases = [System.Collections.Generic.List[pscustomobject]]::new()
-
 
 foreach ($ns in $response.value)
 
@@ -397,20 +396,19 @@ foreach ($ns in $response.value)
 
 }
 
-
 #Output the list and sort it by Namespace, resourceType and alias. You can customize with Where-Object to limit as desired.
 
 $aliases | Sort-Object -Property Namespace, resourceType, alias
 
 $aliases.count 
 
-
+{% endhighlight %}
 
 Ok, I have 696 possible value, but how can I know which fields values are possible. The best approach is the set properly all those value for such resource and then:
 
 <ul>
-<li>We can open Resource Explorer - [https://resources.azure.com](https://resources.azure.com) and get value for resource</li>
-<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - [https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph](https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph)</li>
+<li>We can open Resource Explorer - [https://resources.azure.com] and get value for resource</li>
+<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph</li>
 <li>We can use Resource Explorer in Azure Portal – All services -> Resource Explorer</li>
 </ul>
 
@@ -431,52 +429,34 @@ Azure Policy supports the following effect:
 
 
 
-
 ## WHEN DENY IS NOT DENYING ☹
 There is a situation when Deny policy doesn’t work properly. Let me show you that on example. I would like to prevent creating of Storage Account without network ACLS (Firewall) enabled. I create such policy:
 
+{% highlight json %}
+
 {
-
   "mode": "all",
-
   "policyRule": {
-
     "if": {
-
       "allOf": [
-
         {
-
           "field": "type",
-
           "equals": "Microsoft.Storage/storageAccounts"
-
         },
-
         {
-
           "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
-
           "equals": "Allow"
-
         }
-
       ]
-
     },
-
     "then": {
-
       "effect": "deny"
-
     }
-
   },
-
   "parameters": {}
-
 }
 
+{% endhighlight %}
 
 As you can see, there is deny effect enabled. So we can assume that we can’t create Storage Account without Network ACLS. What will really happened we assign this policy??? We will create it and after that it’ll be NON-Compliant resource. WHY THIS HAPPENED???? Because when you are creating such resource there is no information about networkAcls.defaultAction is template!!!  
 
@@ -486,54 +466,34 @@ So, we would like to write a custom script for Deny create a Storage Account whe
 
 So it’s very easy for me to write policy based on aliases which I know.
 
+{% highlight json %}
+
 {
-
   "mode": "All",
-
   "policyRule": {
-
     "if": {
-
       "allOf": [
-
         {
-
           "field": "type",
-
           "equals": "Microsoft.Storage/storageAccounts" 
-
         },
-
         {
-
           "not": {
-
             "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
-
             "equals": "True"
-
           }
-
         }
-
       ]
-
     },
-
     "then": {
-
       "effect": "deny”
-
     }
-
   },
-
   "parameters": {}
-
   }
-
 }
 
+{% endhighlight %}
 
 
 ## Services Aliases:
