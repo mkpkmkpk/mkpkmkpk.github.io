@@ -85,6 +85,8 @@ When you create a custom policy you have to decide how you implemented them. You
 
 There is a difference between them. When you are using Azure Portal, then you don’t need to add couple policy properties like displayName, description and so on. Below you can find sample policy which ensure that only https traffic is enable for storage account. This policy is created for PowerShell and CLI:
 
+{% highlight ruby %}
+
 {
 
     "properties": {
@@ -139,6 +141,7 @@ There is a difference between them. When you are using Azure Portal, then you do
 
 }
 
+{% endhighlight %}
 
 The same script for Azure Portal deployment will look like this:
 
