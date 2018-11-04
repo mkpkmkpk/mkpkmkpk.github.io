@@ -66,14 +66,19 @@ First of all you have to choose JSON editor or write custom policy in Azure port
 
 Then you should insert schema definition for Azure Policy into Visual Studio. The newest version for policy definition is 2018-05-01. 
 
-https://schema.management.azure.com/schemas/2018-05-01/policyDefinition.json
+[https://schema.management.azure.com/schemas/2018-05-01/policyDefinition.json](https://schema.management.azure.com/schemas/2018-05-01/policyDefinition.json)
 
-!({{ site.baseurl }}/images/Azure-Policy/AzurePolicy01.png "")
+
+
+
+
+![AzurePolicy](https://mkpkmkpk.github.io/Images/Azure-Policy/AzurePolicy01.png "AzurePolicy")
+
 
 
 So when you do that, you can easily write custom policy with autocomplete options 😊
 
-!({{ site.baseurl }}/images/Azure-Policy/AzurePolicy02.png "") 
+![AzurePolicy](https://mkpkmkpk.github.io/Images/Azure-Policy/AzurePolicy02.png "AzurePolicy")
 
 # Azure Policy definition structure
 When you create a custom policy you have to decide how you implemented them. You have couple of possibility:
@@ -214,8 +219,10 @@ There are two possibly value for Mode field:
 I strongly recommended to set mode to All in most case. There is only one situation, when you create a policy for tags and location, when you would like to use indexed mode.  Be careful when you copy Azure Policy from Internet. There are quite a lots of situation when Mode is set to indexed!!! This may also happened when you use default definition in Azure Portal (see Mode value below)!!!! So please DON’T USE built-in policy with Mode Indexed. Duplicate and create your own!!!
 
 
-!({{ site.baseurl }}/images/Azure-Policy/AzurePolicy03.png "")
-!({{ site.baseurl }}/images/Azure-Policy/AzurePolicy04.png "")
+![AzurePolicy](https://mkpkmkpk.github.io/Images/Azure-Policy/AzurePolicy03.png "AzurePolicy")
+
+![AzurePolicy](https://mkpkmkpk.github.io/Images/Azure-Policy/AzurePolicy04.png "AzurePolicy")
+
 
 <b>IMPORTANT:
 
@@ -331,7 +338,10 @@ Fields represents properties for resource you choose. Those fields value are sup
 <li>type</li>
 <li>location</li>
 <li>tags</li>
-<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations</li>
+<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: [https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations](https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations)</li>
+
+
+
 </ul>
 <b>name</b> – The name of resource which you use when created policy
 
@@ -465,14 +475,14 @@ $aliases.count
 Ok, I have 696 possible value, but how can I know which fields values are possible. The best approach is the set properly all those value for such resource and then:
 
 <ul>
-<li>We can open Resource Explorer - https://resources.azure.com and get value for resource</li>
-<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph</li>
+<li>We can open Resource Explorer - [https://resources.azure.com](https://resources.azure.com) and get value for resource</li>
+<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - [https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph](https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph)</li>
 <li>We can use Resource Explorer in Azure Portal – All services -> Resource Explorer</li>
 </ul>
 
 At the end of this article I’ll put the whole list of Aliases which you can use. You can always ask for specific aliases if you can’t find something very useful for you. If so, please go to such URL:
 
-https://github.com/Azure/azure-policy/blob/master/1-contribution-guide/request-alias.md
+[https://github.com/Azure/azure-policy/blob/master/1-contribution-guide/request-alias.md](https://github.com/Azure/azure-policy/blob/master/1-contribution-guide/request-alias.md)
 
 ## Effect
 Azure Policy supports the following effect:
@@ -537,7 +547,9 @@ There is a situation when Deny policy doesn’t work properly. Let me show you t
 As you can see, there is deny effect enabled. So we can assume that we can’t create Storage Account without Network ACLS. What will really happened we assign this policy??? We will create it and after that it’ll be NON-Compliant resource. WHY THIS HAPPENED???? Because when you are creating such resource there is no information about networkAcls.defaultAction is template!!!  
 
 So, we would like to write a custom script for Deny create a Storage Account when there is no secure transfer enabled. I use Resource Explorer in portal and get such information below. 
-!({{ site.baseurl }}/images/Azure-Policy/AzurePolicy05.png "")
+
+![AzurePolicy](https://mkpkmkpk.github.io/Images/Azure-Policy/AzurePolicy05.png "AzurePolicy")
+
 So it’s very easy for me to write policy based on aliases which I know.
 
 {
@@ -589,9 +601,10 @@ So it’s very easy for me to write policy based on aliases which I know.
 }
 
 
+
 ## Services Aliases:
 ### Analysis Services
-Microsoft.AnalysisServices/servers/asAdministrators                                                                     
+Microsoft.AnalysisServices/servers/asAdministrators
 Microsoft.AnalysisServices/servers/asAdministrators.members                                                             
 Microsoft.AnalysisServices/servers/asAdministrators.members[*]                                                          
 Microsoft.AnalysisServices/servers/backupBlobContainerUri                                                               
@@ -1295,5 +1308,8 @@ Microsoft.Network/virtualNetworks/virtualNetworkPeerings/remoteVirtualNetwork.id
 ### Virtual Network Gateway
 Microsoft.Network/virtualNetworkGateways/gatewayType                                                                    
 Microsoft.Network/virtualNetworkGateways/sku.name
+
+
+
 
 Tags: #Azure #AzurePolicy #Policy #ResourceGroup #Resource #AzureSecurity #AzureCompliance 
