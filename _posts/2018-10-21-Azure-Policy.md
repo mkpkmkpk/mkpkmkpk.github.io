@@ -280,7 +280,7 @@ Fields represents properties for resource you choose. Those fields value are sup
 <li>type</li>
 <li>location</li>
 <li>tags</li>
-<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: <a href=https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations>https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations</a></li>
+<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: <a href="https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations">https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations</a></li>
 
 
 
@@ -459,9 +459,10 @@ So it’s very easy for me to write policy based on aliases which I know.
 
 # Services Aliases:
 ### Analysis Services
+```
 Microsoft.AnalysisServices/servers/asAdministrators
 Microsoft.AnalysisServices/servers/asAdministrators.members                                                             
-Microsoft.AnalysisServices/servers/asAdministrators.members[*]                                                          
+Microsoft.AnalysisServices/servers/asAdministrators.members[*]
 Microsoft.AnalysisServices/servers/backupBlobContainerUri                                                               
 Microsoft.AnalysisServices/servers/ipV4FirewallSettings                                                                 
 Microsoft.AnalysisServices/servers/ipV4FirewallSettings.enablePowerBIService                                            
@@ -475,9 +476,11 @@ Microsoft.AnalysisServices/servers/querypoolConnectionMode
 Microsoft.AnalysisServices/servers/serverFullName                                                                       
 Microsoft.AnalysisServices/servers/serverMonitorMode                                                                    
 Microsoft.AnalysisServices/servers/state
+```
 
 ### App Service
-Microsoft.Web/hostingEnvironments/clusterSettings[*].name                                                               
+```
+Microsoft.Web/hostingEnvironments/clusterSettings[*].name
 Microsoft.Web/hostingEnvironments/clusterSettings[*].value                                                              
 Microsoft.Web/serverfarms/hostingEnvironmentProfile.id                                                                  
 Microsoft.Web/serverfarms/sku.capacity                                                                                  
@@ -583,8 +586,9 @@ Microsoft.Web/sites/config/winAuthAdminState
 Microsoft.Web/sites/config/winAuthTenantState                                                                           
 Microsoft.Web/sites/config/windowsFxVersion                                                                             
 Microsoft.Web/sites/config/xManagedServiceIdentityId
-
+```
 ### Application Gateway
+```
 Microsoft.Network/applicationGateways/sku.capacity                                                                      
 Microsoft.Network/applicationGateways/sku.name                                                                          
 Microsoft.Network/applicationGateways/sku.tier                                                                          
@@ -592,26 +596,31 @@ Microsoft.Network/applicationGateways/webApplicationFirewallConfiguration.disabl
 Microsoft.Network/applicationGateways/webApplicationFirewallConfiguration.enabled                                       
 Microsoft.Network/applicationGateways/webApplicationFirewallConfiguration.firewallMode                                  
 Microsoft.Network/applicationGateways/webApplicationFirewallConfiguration.requestBodyCheck
-
+```
 ### Azure Automation
+```
 Microsoft.Automation/automationAccounts/variables/isEncrypted                                                           
 Microsoft.Automation/automationAccounts/webhooks/creationTime                                                           
 Microsoft.Automation/automationAccounts/webhooks/expiryTime
-
+```
 ### Azure Locks
+```
 Microsoft.Authorization/locks/level
-
+```
 ### Batch
+```
 Microsoft.Batch/batchAccounts/autoStorage.storageAccountId                                                              
 Microsoft.Batch/batchAccounts/keyVaultReference.id                                                                      
 Microsoft.Batch/batchAccounts/poolAllocationMode
-
+```
 ### CDN
+```
 Microsoft.CDN/profiles/sku.name                                                                                         
 microsoft.cdn/profiles/endpoints/isHttpAllowed                                                                          
 microsoft.cdn/profiles/endpoints/isHttpsAllowed
-
+```
 ### Cosmos DB
+```
 Microsoft.DocumentDB/databaseAccounts/consistencyPolicy.defaultConsistencyLevel                                         
 Microsoft.DocumentDB/databaseAccounts/enableAutomaticFailover                                                           
 Microsoft.DocumentDB/databaseAccounts/failoverPolicies                                                                  
@@ -631,8 +640,9 @@ Microsoft.DocumentDB/databaseAccounts/virtualNetworkRules[*].id
 Microsoft.DocumentDB/databaseAccounts/writeLocations                                                                    
 Microsoft.DocumentDB/databaseAccounts/writeLocations[*]                                                                 
 Microsoft.DocumentDB/databaseAccounts/writeLocations[*].locationName
-
+```
 ### Data Factory
+```
 Microsoft.DataFactory/factories/version                                                                                 
 Microsoft.DataFactory/factories/vstsConfiguration                                                                       
 Microsoft.DataFactory/factories/vstsConfiguration.accountName                                                           
@@ -682,33 +692,38 @@ Microsoft.DataFactory/factories/pipelines/activities[*].policy.timeout
 Microsoft.DataFactory/factories/pipelines/activities[*].type                                                            
 Microsoft.DataFactory/factories/pipelines/activities[*].typeProperties                                                  
 Microsoft.DataFactory/factories/pipelines/parameters
-
+```
 ### Data Lake Store
+```
 Microsoft.DataLakeStore/accounts/encryptionState                                                                        
 Microsoft.DataLakeStore/accounts/firewallState                                                                          
 Microsoft.DataLakeStore/accounts/firewallRules/endIpAddress                                                             
 Microsoft.DataLakeStore/accounts/firewallRules/startIpAddress
-
+```
 
 ### Disks
+```
 Microsoft.Compute/disks/sku.name                                                                                        
 Microsoft.Compute/imageId                                                                                               
 Microsoft.Compute/imageOffer                                                                                            
 Microsoft.Compute/imagePublisher                                                                                        
 Microsoft.Compute/imageSku                                                                                              
 Microsoft.Compute/imageVersion
-
+```
 ### Express Route
+```
 Microsoft.Network/expressRouteCircuits/serviceProvider.bandwidthInMbps                                                  
 Microsoft.Network/expressRouteCircuits/serviceProvider.peeringLocation                                                  
 Microsoft.Network/expressRouteCircuits/sku.family                                                                       
 Microsoft.Network/expressRouteCircuits/sku.name                                                                         
 Microsoft.Network/expressRouteCircuits/sku.tier
-
+```
 ### Guest Configuration Assignments
+```
 Microsoft.GuestConfiguration/guestConfigurationAssignments/complianceStatus
-
+```
 ### HDInsight
+```
 Microsoft.HDInsight/clusters/clusterDefinition.kind                                                                     
 Microsoft.HDInsight/clusters/clusterVersion                                                                             
 Microsoft.HDInsight/clusters/computeProfile.roles[*].virtualNetworkProfile.id                                           
@@ -718,8 +733,9 @@ Microsoft.HDInsight/clusters/securityProfile.directoryType
 Microsoft.HDInsight/clusters/securityProfile.domain                                                                     
 Microsoft.HDInsight/clusters/securityProfile.ldapsUrls[*]                                                               
 Microsoft.HDInsight/clusters/tier
-
+```
 ### Insights
+```
 Microsoft.Insights/ActivityLogAlerts/condition                                                                          
 Microsoft.Insights/ActivityLogAlerts/condition.allOf                                                                    
 Microsoft.Insights/ActivityLogAlerts/condition.allOf[*]                                                                 
@@ -763,16 +779,18 @@ Microsoft.Insights/logProfiles/retentionPolicy.days
 Microsoft.Insights/logProfiles/retentionPolicy.enabled                                                                  
 Microsoft.Insights/logProfiles/serviceBusRuleId                                                                         
 Microsoft.Insights/logProfiles/storageAccountId
-
+```
 ### IoT Hubs
+```
 Microsoft.Devices/IotHubs/ipFilterRules[*].action                                                                       
 Microsoft.Devices/IotHubs/ipFilterRules[*].filterName                                                                   
 Microsoft.Devices/IotHubs/ipFilterRules[*].ipMask                                                                       
 Microsoft.Devices/IotHubs/sku.capacity                                                                                  
 Microsoft.Devices/IotHubs/sku.name                                                                                      
 Microsoft.Devices/IotHubs/sku.tier
-
+```
 ### Key Vault
+```
 Microsoft.KeyVault/vaults/enabledForDeployment                                                                          
 Microsoft.KeyVault/vaults/enabledForDiskEncryption                                                                      
 Microsoft.KeyVault/vaults/enabledForTemplateDeployment                                                                  
@@ -793,14 +811,16 @@ Microsoft.KeyVault/vaults/secrets/attributes.enabled
 Microsoft.KeyVault/vaults/secrets/attributes.exp                                                                        
 Microsoft.KeyVault/vaults/secrets/attributes.nbf                                                                        
 Microsoft.KeyVault/vaults/secrets/attributes.updated
-
+```
 ### Load Balancer
+```
 Microsoft.Network/loadBalancers/frontendIPConfigurations[*].privateIPAllocationMethod                                   
 Microsoft.Network/loadBalancers/frontendIPConfigurations[*].publicIPAddress.id                                          
 Microsoft.Network/loadBalancers/frontendIPConfigurations[*].subnet.id                                                   
 Microsoft.Network/loadBalancers/sku.name
-
+```
 ### Logic Apps
+```
 Microsoft.Logic/workflows/accessControl                                                                                 
 Microsoft.Logic/workflows/accessControl.actions                                                                         
 Microsoft.Logic/workflows/accessControl.actions.allowedCallerIpAddresses                                                
@@ -827,8 +847,9 @@ Microsoft.Logic/workflows/endpointsConfiguration.workflow.outgoingIpAddresses
 Microsoft.Logic/workflows/endpointsConfiguration.workflow.outgoingIpAddresses[*]                                        
 Microsoft.Logic/workflows/endpointsConfiguration.workflow.outgoingIpAddresses[*].address                                
 Microsoft.Logic/workflows/state
-
+```
 ### Network Interface
+```
 Microsoft.Network/networkInterfaces/enableIPForwarding                                                                  
 Microsoft.Network/networkInterfaces/ipconfigurations[*].applicationSecurityGroups                                       
 Microsoft.Network/networkInterfaces/ipconfigurations[*].applicationSecurityGroups[*].id                                 
@@ -836,8 +857,9 @@ Microsoft.Network/networkInterfaces/ipconfigurations[*].privateIPAllocationMetho
 Microsoft.Network/networkInterfaces/ipconfigurations[*].publicIpAddress.id                                              
 Microsoft.Network/networkInterfaces/ipconfigurations[*].subnet.id                                                       
 Microsoft.Network/networkInterfaces/networkSecurityGroup.id
-
+```
 ### Network Security Group
+```
 Microsoft.Network/networkSecurityGroups/networkInterfaces[*].id                                                         
 Microsoft.Network/networkSecurityGroups/securityRules[*].access                                                         
 Microsoft.Network/networkSecurityGroups/securityRules[*].destinationAddressPrefix                                       
@@ -868,14 +890,16 @@ Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefixes[*]
 Microsoft.Network/networkSecurityGroups/securityRules/sourceApplicationSecurityGroups[*]                                
 Microsoft.Network/networkSecurityGroups/securityRules/sourcePortRange                                                   
 Microsoft.Network/networkSecurityGroups/securityRules/sourcePortRanges[*]
-
+```
 ### Notification Hubs
+```
 Microsoft.NotificationHubs/Namespaces/AuthorizationRules/rights                                                         
 Microsoft.NotificationHubs/Namespaces/AuthorizationRules/rights[*]                                                      
 Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/rights                                        
 Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/rights[*]
-
+```
 ### Operational Insights
+```
 Microsoft.OperationalInsights/workspaces/retentionInDays                                                                
 Microsoft.OperationalInsights/workspaces/sku.name                                                                       
 Microsoft.OperationalInsights/workspaces/dataSources/counterName                                                        
@@ -884,11 +908,13 @@ Microsoft.OperationalInsights/workspaces/dataSources/eventTypes[*].eventType
 Microsoft.OperationalInsights/workspaces/dataSources/instanceName                                                       
 Microsoft.OperationalInsights/workspaces/dataSources/intervalSeconds                                                    
 Microsoft.OperationalInsights/workspaces/dataSources/objectName
-
+```
 ### Public IP
+```
 Microsoft.Network/publicIPAddresses/sku.name
-
+```
 ### Redis Cache
+```
 Microsoft.Cache/Redis/enableNonSslPort                                                                                  
 Microsoft.Cache/Redis/shardCount                                                                                        
 Microsoft.Cache/Redis/sku.capacity                                                                                      
@@ -896,28 +922,33 @@ Microsoft.Cache/Redis/sku.family
 Microsoft.Cache/Redis/sku.name
 Microsoft.Cache/Redis/firewallrules/endIP                                                                               
 Microsoft.Cache/Redis/firewallrules/startIP    
-
+```
 ### Role Assignments
+```
 Microsoft.Authorization/roleAssignments/principalId                                                                     
 Microsoft.Authorization/roleAssignments/principalType                                                                   
 Microsoft.Authorization/roleAssignments/roleDefinitionId
-
+```
 ### Role Definitions
+```
 Microsoft.Authorization/roleDefinitions/permissions.actions[*]                                                          
 Microsoft.Authorization/roleDefinitions/permissions.notActions[*]                                                       
 Microsoft.Authorization/roleDefinitions/roleName                                                                        
 Microsoft.Authorization/roleDefinitions/type       
-
+```
 ### Scheduler
+```
 Microsoft.Scheduler/jobcollections/sku.name
-
+```
 ### Search
+```
 Microsoft.Search/searchServices/hostingMode                                                                             
 Microsoft.Search/searchServices/partitionCount                                                                          
 Microsoft.Search/searchServices/replicaCount                                                                            
 Microsoft.Search/searchServices/sku.name
-
+```
 ### Security
+```
 Microsoft.Security/alerts/state                                                                                         
 Microsoft.Security/complianceResults/resourceStatus                                                                     
 Microsoft.Security/locations/alerts/state                                                                               
@@ -958,16 +989,18 @@ Microsoft.Security/policies/securityContactConfiguration.securityContactPhone
 Microsoft.Security/policies/securityContactConfiguration.sendToAdminOn                                                  
 Microsoft.Security/policies/unique                                                                                      
 Microsoft.Security/pricings/pricingTier
-
+```
 ### Service Fabric
+```
 Microsoft.ServiceFabric/clusters/azureActiveDirectory.tenantId                                                          
 Microsoft.ServiceFabric/clusters/certificate.thumbprint                                                                 
 Microsoft.ServiceFabric/clusters/certificate.x509StoreName                                                              
 Microsoft.ServiceFabric/clusters/fabricSettings[*].name                                                                 
 Microsoft.ServiceFabric/clusters/fabricSettings[*].parameters[*].name                                                   
 Microsoft.ServiceFabric/clusters/fabricSettings[*].parameters[*].value
-
+```
 ### SQL
+```
 Microsoft.Sql/servers/version                                                                                           
 Microsoft.Sql/servers/administrators/administratorType                                                                  
 Microsoft.Sql/servers/administrators/login                                                                              
@@ -1028,8 +1061,9 @@ Microsoft.Sql/servers/securityAlertPolicies/state
 Microsoft.Sql/servers/securityAlertPolicies/storageEndpoint                                                             
 Microsoft.Sql/servers/virtualNetworkRules/ignoreMissingVnetServiceEndpoint                                              
 Microsoft.Sql/servers/virtualNetworkRules/virtualNetworkSubnetId
-
+```
 ### Storage Account
+```
 Microsoft.Storage/storageAccounts/accessTier                                                                            
 Microsoft.Storage/storageAccounts/accountType                                                                           
 Microsoft.Storage/storageAccounts/enableBlobEncryption                                                                  
@@ -1043,14 +1077,17 @@ Microsoft.Storage/storageAccounts/networkAcls.virtualNetworkRules[*]
 Microsoft.Storage/storageAccounts/networkAcls.virtualNetworkRules[*].id                                                 
 Microsoft.Storage/storageAccounts/sku.name                                                                              
 Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly
-
+```
 ### Terraform OSS
+```
 Microsoft.TerraformOSS/resources/image
-
+```
 ### Traffic Manager
+```
 Microsoft.Network/trafficmanagerprofiles/monitorConfig.protocol
-
+```
 ### Virtual Machine
+```
 Microsoft.Compute/imageId                                                                                               
 Microsoft.Compute/imageOffer                                                                                            
 Microsoft.Compute/imagePublisher                                                                                        
@@ -1094,8 +1131,9 @@ Microsoft.Compute/virtualMachines/storageProfile.osDisk.name
 Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType                                                          
 Microsoft.Compute/virtualMachines/storageProfile.osDisk.vhd                                                             
 Microsoft.Compute/virtualMachines/storageProfile.osDisk.vhd.uri
-
+```
 ### Virtual Machine Extension
+```
 Microsoft.Compute/virtualMachines/extensions/autoUpgradeMinorVersion                                                    
 Microsoft.Compute/virtualMachines/extensions/provisioningState                                                          
 Microsoft.Compute/virtualMachines/extensions/publisher                                                                  
@@ -1103,8 +1141,9 @@ Microsoft.Compute/virtualMachines/extensions/settings
 Microsoft.Compute/virtualMachines/extensions/settings.workspaceId                                                       
 Microsoft.Compute/virtualMachines/extensions/type                                                                       
 Microsoft.Compute/virtualMachines/extensions/typeHandlerVersion
-
+```
 ### Virtual Machine Scale Sets
+```
 Microsoft.Compute/imageId                                                                                               
 Microsoft.Compute/imageOffer                                                                                            
 Microsoft.Compute/imagePublisher                                                                                        
@@ -1132,8 +1171,9 @@ Microsoft.Compute/VirtualMachineScaleSets/osProfile.windowsConfiguration.provisi
 Microsoft.Compute/VirtualMachineScaleSets/sku.name                                                                      
 Microsoft.Compute/VirtualMachineScaleSets/sku.tier                                                                      
 Microsoft.Compute/VirtualMachineScaleSets/upgradePolicy.automaticOSUpgrade
-
+```
 ### Virtual Machine Scale Sets Extensions
+```
 Microsoft.Compute/virtualMachineScaleSets/extensions/autoUpgradeMinorVersion                                            
 Microsoft.Compute/virtualMachineScaleSets/extensions/provisioningState                                                  
 Microsoft.Compute/virtualMachineScaleSets/extensions/publisher                                                          
@@ -1141,8 +1181,9 @@ Microsoft.Compute/virtualMachineScaleSets/extensions/settings
 Microsoft.Compute/virtualMachineScaleSets/extensions/settings.workspaceId                                               
 Microsoft.Compute/virtualMachineScaleSets/extensions/type                                                               
 Microsoft.Compute/virtualMachineScaleSets/extensions/typeHandlerVersion
-
+```
 ### Virtual Network
+```
 Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]                                                       
 Microsoft.Network/virtualNetworks/ddosProtectionPlan.id                                                                 
 Microsoft.Network/virtualNetworks/subnets[*].addressPrefix                                                              
@@ -1159,11 +1200,12 @@ Microsoft.Network/virtualNetworks/subnets/routeTable.id
 Microsoft.Network/virtualNetworks/subnets/serviceEndpoints[*].locations[*]                                              
 Microsoft.Network/virtualNetworks/subnets/serviceEndpoints[*].service                                                   
 Microsoft.Network/virtualNetworks/virtualNetworkPeerings/remoteVirtualNetwork.id
-
+```
 ### Virtual Network Gateway
+```
 Microsoft.Network/virtualNetworkGateways/gatewayType                                                                    
 Microsoft.Network/virtualNetworkGateways/sku.name
-
+```
 
 
 
