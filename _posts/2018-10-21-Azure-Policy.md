@@ -280,7 +280,7 @@ Fields represents properties for resource you choose. Those fields value are sup
 <li>type</li>
 <li>location</li>
 <li>tags</li>
-<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: [https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations](https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations)</li>
+<li>source – with ACTION – UNDOCUMENTED 😊 – You can AUDIT OR DENY SOME ACTION ON AZURE PORTAL 😊 Yes You can write custom policy with audit or deny Azure action. The whole list of action you can find here: <a href=https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations>https://docs.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations</a></li>
 
 
 
@@ -368,8 +368,8 @@ $aliases.count
 Ok, I have 696 possible value, but how can I know which fields values are possible. The best approach is the set properly all those value for such resource and then:
 
 <ul>
-<li>We can open Resource Explorer - (https://resources.azure.com) and get value for resource</li>
-<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph</li>
+<li>We can open Resource Explorer - <a href=https://resources.azure.com>https://resources.azure.com</a> and get value for resource</li>
+<li>We can use Azure Resource Graph – You can read about it on Michal Smereczynski MVP blog - <a href=https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph>https://lnx.azurewebsites.net/saving-time-with-azure-resource-graph</a></li>
 <li>We can use Resource Explorer in Azure Portal – All services -> Resource Explorer</li>
 </ul>
 
